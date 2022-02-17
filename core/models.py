@@ -32,6 +32,12 @@ class Movie(models.Model):
     flyer = models.ImageField(upload_to='flyers')
     age_limit = models.CharField(max_length=10, choices=AGE_CHOICES)
     
+    def __str__(self):
+        return self.title
+    
 class Video(models.Model):
     title = models.CharField(max_length=225, blank=True, null=True)
     file = models.FileField(upload_to='movies')
+    
+    def __str__(self):
+        return self.title
